@@ -1,18 +1,5 @@
 [build]
   command = "npm run build"
-  publish = ".next"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
 
 [build.environment]
-  # Disable Next.js telemetry during build
   NEXT_TELEMETRY_DISABLED = "1"
-  # Force dynamic rendering for server routes (no stale static builds)
-  NEXT_FORCE_DYNAMIC = "1"
-
-# Redirects for cleaner URLs (optional)
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/server/api/:splat"
-  status = 200
